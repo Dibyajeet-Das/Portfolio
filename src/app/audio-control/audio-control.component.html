@@ -1,0 +1,20 @@
+<div class="audio-control" [class.playing]="isPlaying" (click)="toggleAudio()">
+    <div class="icon">
+        <!-- <span *ngIf="isPlaying">🔊</span> -->
+        <!-- <i class="fi fi-ss-waveform-path"*ngIf="isPlaying"></i>
+        <i class="fi fi-ss-waveform-path"*ngIf="!isPlaying"></i> -->
+        <i class="fi fi-rr-equalizer" *ngIf="isPlaying"></i>
+        <i class="fi fi-rr-play" *ngIf="!isPlaying"></i>
+        <!-- <span *ngIf="!isPlaying">🔇</span> -->
+    </div>
+    <div class="visualizer" *ngIf="isPlaying">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <audio #audioPlayer loop>
+        <source src="/assets/audio/Misogi.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</div>

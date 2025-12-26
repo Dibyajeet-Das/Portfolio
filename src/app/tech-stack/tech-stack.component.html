@@ -1,0 +1,10 @@
+<div class="tech-container container">
+    <h2 class="section-title">My Arsenal</h2>
+    <div class="skills-grid">
+        <div class="skill-item" *ngFor="let skill of skills">
+            <div class="scroll-bg"></div>
+            <span class="skill-name">{{ skill.name }}</span>
+            <span class="skill-level">{{ skill.level }}</span>
+        </div>
+    </div>
+</div>
