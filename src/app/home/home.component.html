@@ -1,82 +1,99 @@
 <div class="home-container">
     <img src="assets/images/logo.png" alt="Logo" class="site-logo">
-    <app-audio-control></app-audio-control>
 
-    <section class="hero" id="hero">
-        <div class="hero-bg"></div>
+    <div class="hero-bg">
 
-        <div class="hero-container split-layout">
-            <!-- Left Column: Content -->
-            <div class="hero-left">
-                <div class="greeting-badge">
-                    <span class="icon">✨</span> LET'S MEET!
-                </div>
+        <app-audio-control></app-audio-control>
 
-                <h1 class="main-heading">
-                    Hi, I'm <span class="highlight-name">Dibyajeet Das</span>
-                </h1>
+        <section class="hero" id="hero">
+            <!-- <div class="hero-bg"></div> -->
+            <!-- <div class="video-bg-container"> -->
+                <video class="video-bg" 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                controls>
+                <source src="assets/video/three.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-overlay"></div>
+            <!-- </div> -->
+            <div class="hero-container split-layout">
+                <!-- Left Column: Content -->
+                <div class="hero-left">
+                    <div class="greeting-badge">
+                        <span class="icon">✨</span> LET'S MEET!
 
-                <h2 class="sub-heading">
-                    <span class="typing-text">{{ displayText }}</span><span class="cursor">|</span>
-                </h2>
+                    </div>
 
-                <p class="hero-description">
-                    Experienced software engineer mixing logic with creativity.
-                    Specializing in scalable web applications and backend systems.
-                </p>
+                    <h1 class="main-heading">
+                        Hi, I'm <span class="highlight-name">Dibyajeet Das</span>
+                    </h1>
 
-                <div class="hero-cta">
-                    <button class="btn-primary" (click)="onProjectsClick()">
-                        <span class="icon">⚔️</span> My Works
-                    </button>
-                    <button class="btn-secondary">
-                        <span class="icon">📜</span> Download CV
-                    </button>
-                </div>
+                    <h2 class="sub-heading">
+                        <span class="typing-text">{{ displayText }}</span><span class="cursor">|</span>
+                    </h2>
 
-                <div class="specialization-pills">
-                    <span class="pill-label">Specialization:</span>
-                    <div class="pills-container">
-                        <span class="pill">Java</span>
-                        <span class="pill">Spring Boot</span>
-                        <span class="pill">Angular</span>
-                        <span class="pill">Backend</span>
-                        <span class="pill">Cloud</span>
+                    <p class="hero-description">
+                        Experienced software engineer mixing logic with creativity.
+                        Specializing in scalable web applications and backend systems.
+                    </p>
+
+                    <div class="hero-cta">
+                        <button class="btn-primary" (click)="onProjectsClick()">
+                            <span class="icon">⚔️</span> My Works
+                        </button>
+                        <button class="btn-secondary">
+                            <span class="icon">📜</span> Download CV
+                        </button>
+                    </div>
+
+                    <div class="specialization-pills">
+                        <span class="pill-label">Specialization:</span>
+                        <div class="pills-container">
+                            <span class="pill">Java</span>
+                            <span class="pill">Spring Boot</span>
+                            <span class="pill">Angular</span>
+                            <span class="pill">Backend</span>
+                            <span class="pill">Cloud</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Right Column: Image -->
-            <div class="hero-right">
-                <div class="profile-card">
-                    <img src="assets/images/my.jpg" alt="Dibyajeet Das" class="hero-profile-image">
+                <!-- Right Column: Image -->
+                <div class="hero-right">
+                    <div class="profile-card">
 
-                    <!-- Floating Badge -->
-                    <div class="floating-badge experience-badge">
-                        <span class="badge-number">Ronin</span>
-                        <span class="badge-text">Developer</span>
+                        <div class="profile-card">
+                            <img src="assets/images/my.jpg" alt="Dibyajeet Das" class="hero-profile-image">
+
+                            <div class="floating-badge experience-badge">
+                                <span class="badge-number">Ronin</span>
+                                <span class="badge-text">Developer</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="scroll-indicator">
+                    <span>Scroll</span>
+                    <div class="arrow">↓</div>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="arrow">↓</div>
-        </div>
-    </section>
+        <!-- About section removed as it's merged into Hero -->
 
-    <!-- About section removed as it's merged into Hero -->
+        <section id="projects">
+            <app-projects></app-projects>
+        </section>
 
-    <section id="projects">
-        <app-projects></app-projects>
-    </section>
+        <section id="tech-stack">
+            <app-tech-stack></app-tech-stack>
+        </section>
 
-    <section id="tech-stack">
-        <app-tech-stack></app-tech-stack>
-    </section>
-
-    <footer>
-        <p>© 2025 Created by Dibyajeet Das. All Rights are Reserved.</p>
-    </footer>
-</div>
+        <footer>
+            <p>© 2025 Created by Dibyajeet Das. All Rights are Reserved.</p>
+        </footer>
+    </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from '../projects/projects.component';
 import { TechStackComponent } from '../tech-stack/tech-stack.component';
@@ -12,7 +12,7 @@ import { LoadingService } from '../loading/loading.service';
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
     displayText = '';
     fullText = 'Software Engineer | Creative Developer';
     index = 0;
@@ -21,6 +21,21 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.typeWriter();
+    }
+
+    ngAfterViewInit() {
+        const video = document.querySelector('.video-bg') as HTMLVideoElement | null;
+        if (video) {
+            video.addEventListener('error', () => {
+                console.error('Video element error', video.error);
+            });
+            video.addEventListener('loadedmetadata', () => {
+                console.log('Video metadata loaded', video.videoWidth, video.videoHeight);
+            });
+            video.addEventListener('canplay', () => console.log('Video can play'));
+        } else {
+            console.warn('Video element .video-bg not found in DOM');
+        }
     }
 
     typeWriter() {
