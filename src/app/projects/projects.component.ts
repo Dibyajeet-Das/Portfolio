@@ -18,7 +18,7 @@ interface Project {
 export class ProjectsComponent {
     projects: Project[] = [
         {
-            title: 'E-Commerce Katana',
+            title: 'Health_And_Wellness_Booking_Portal',
             description: 'A sharp and fast e-commerce platform built with Angular and Node.js.',
             tech: ['Angular', 'Node.js', 'MongoDB'],
             link: '#'

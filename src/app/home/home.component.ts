@@ -1,9 +1,14 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from '../projects/projects.component';
 import { TechStackComponent } from '../tech-stack/tech-stack.component';
 import { AudioControlComponent } from '../audio-control/audio-control.component';
 import { LoadingService } from '../loading/loading.service';
+
+
+
+
+
 
 @Component({
     selector: 'app-home',
@@ -22,21 +27,26 @@ export class HomeComponent implements OnInit, AfterViewInit {
     ngOnInit() {
         this.typeWriter();
     }
-
+    @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
     ngAfterViewInit() {
-        const video = document.querySelector('.video-bg') as HTMLVideoElement | null;
-        if (video) {
-            video.addEventListener('error', () => {
-                console.error('Video element error', video.error);
+    const video = this.bgVideo?.nativeElement;
+    if (!video) return;
+
+    video.muted = true;
+    video.playsInline = true;
+
+    const playPromise = video.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                console.log('Background video autoplay started');
+            })
+            .catch((err: any) => {
+                console.warn('Autoplay blocked by browser:', err);
             });
-            video.addEventListener('loadedmetadata', () => {
-                console.log('Video metadata loaded', video.videoWidth, video.videoHeight);
-            });
-            video.addEventListener('canplay', () => console.log('Video can play'));
-        } else {
-            console.warn('Video element .video-bg not found in DOM');
-        }
     }
+}
 
     typeWriter() {
         if (this.index < this.fullText.length) {
@@ -60,4 +70,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     }
+
+    
 }
