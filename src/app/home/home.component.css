@@ -374,3 +374,266 @@
         bottom: 20px;
     }
 }
+
+/* Footer Styling */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid rgba(211, 47, 47, 0.3);
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.5) 0%, rgba(0, 0, 0, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    margin-top: 60px;
+}
+
+footer p {
+    color: #999;
+    font-size: 0.95rem;
+    margin: 0;
+    font-family: var(--font-display, 'Courier New', monospace);
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+footer:hover p {
+    color: var(--paper-white);
+}
+
+footer.work-footer {
+    margin-top: auto;
+    padding: 50px 20px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(20, 20, 20, 0.8) 100%);
+    border-top: 2px solid rgba(211, 47, 47, 0.3);
+}
+
+footer.work-footer p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer.home-footer {
+    margin-top: 40px;
+}
+
+/* Work View Styles */
+.work-view {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.btn-cancel {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: var(--primary-red, #dc143c);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-family: var(--font-display, 'Courier New', monospace);
+}
+
+.btn-cancel:hover {
+    background: #ff1744;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4);
+}
+
+.btn-cancel .icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Projects Carousel Section */
+.projects-carousel-section {
+    padding: 60px 20px 100px;
+    background: transparent;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--paper-white);
+    margin-bottom: 60px;
+    font-family: var(--font-display, 'Courier New', monospace);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-wrapper {
+    flex: 1;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none;
+    /* Hide scrollbar for IE and Edge */
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.carousel-item {
+    flex: 0 0 350px;
+    height: 400px;
+}
+
+.carousel-card {
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid var(--charcoal);
+    padding: 30px;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-card:hover {
+    border-color: var(--primary-red, #dc143c);
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.3);
+    transform: translateY(-10px);
+}
+
+.carousel-card h3 {
+    color: var(--paper-white);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-family: var(--font-display, 'Courier New', monospace);
+}
+
+.carousel-card p {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.tech-tags-small {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tags-small span {
+    background: rgba(211, 47, 47, 0.15);
+    color: var(--primary-red, #dc143c);
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    border: 1px solid var(--primary-red, #dc143c);
+    border-radius: 3px;
+}
+
+.btn-carousel {
+    background: var(--primary-red, #dc143c);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-family: var(--font-display, 'Courier New', monospace);
+    font-size: 0.9rem;
+    display: inline-block;
+}
+
+.btn-carousel:hover {
+    background: #ff1744;
+    transform: scale(1.05);
+}
+
+.carousel-btn {
+    background: rgba(211, 47, 47, 0.8);
+    border: 1px solid var(--primary-red, #dc143c);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: var(--primary-red, #dc143c);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.carousel-btn span {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 300px;
+        height: 350px;
+    }
+
+    .carousel-title {
+        font-size: 2rem;
+    }
+
+    .carousel-container {
+        gap: 10px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .btn-cancel {
+        top: 20px;
+        right: 20px;
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}

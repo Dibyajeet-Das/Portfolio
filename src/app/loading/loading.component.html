@@ -1,13 +1,12 @@
 <div class="loading-screen" *ngIf="isLoading" [class.fade-out]="!isLoading">
   <div class="content">
-    <div class="samurai-silhouette">
-      <img src="assets/images/samurai-loading.png" alt="Samurai Loading">
+    <!-- Red Spinner Animation -->
+    <div class="spinner-container">
+      <div class="spinner"></div>
     </div>
+    
     <div class="loading-text">
       <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span><span>N</span><span>G</span>
-    </div>
-    <div class="click-to-enter">
-      <p>Click to Enter Dojo</p>
     </div>
   </div>
 </div>
