@@ -11,10 +11,6 @@ interface Project {
     link: string;
 }
 
-
-
-
-
 //below is the routing of different components map to the Single home component 
 @Component({
     selector: 'app-home',
@@ -88,7 +84,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         }, 2000);
     }
 
-    // 👇 OPTIONAL: BACK TO HOME
+    //OPTIONAL: BACK TO HOME
     backToHome() {
         this.loadingService.show();
         this.currentView = 'home';
