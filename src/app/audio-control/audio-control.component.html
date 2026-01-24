@@ -1,17 +1,28 @@
-<div class="audio-control" [class.playing]="isPlaying" (click)="toggleAudio()">
-    <div class="icon">
-        <img *ngIf="!isPlaying" src="/assets/images/sound_icon.png" alt="Sound" class="static-icon">
-        <!-- <img *ngIf="!isPlaying" src="assets/images/kitsune.gif" alt="Sound" class="icon_kitsune"> -->
-    </div>
-    
-    <div class="visualizer" *ngIf="isPlaying">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-    <audio #audioPlayer loop>
-        <source src="/assets/audio/Misogi.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
+<!-- <div class="audio-control" [class.playing]="isPlaying" (click)="toggleAudio()"> -->
+
+<div
+  class="audio-control"
+  [class.playing]="isPlaying"
+  (click)="toggleAudio()">
+
+  <!-- Static icon when paused -->
+  <img
+    *ngIf="!isPlaying"
+    src="/assets/images/sound_icon.png"
+    alt="Sound"
+    class="static-icon">
+
+  <!-- Visualizer when playing -->
+  <div class="visualizer" *ngIf="isPlaying">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <audio #audioPlayer loop>
+    <source src="/assets/audio/Misogi.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
 </div>

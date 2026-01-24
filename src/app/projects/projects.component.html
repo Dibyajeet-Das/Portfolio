@@ -1,4 +1,12 @@
 <div class="projects-container container">
+
+    <!-- <button class="btn-cancel back-btn" (click)="goBackHome()">
+        <span class="icon">✕</span> Back to Home
+    </button> -->
+    <button class="btn-cancel back-btn" routerLink="/">
+        <span class="icon">✕</span> Back to Home
+    </button>
+
     <h2 class="section-title">Battle History</h2>
     <div class="projects-grid">
         <div class="project-card" *ngFor="let project of projects">
