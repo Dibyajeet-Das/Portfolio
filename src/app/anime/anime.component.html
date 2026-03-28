@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="row-scroll">
+    <div class="anime-card" *ngFor="let anime of animes">
+      <div class="anime-thumbnail-wrapper">
+        <img [src]="anime.thumbnail" [alt]="anime.title" class="anime-thumbnail" />
+        <div class="anime-info-overlay">
+          <button class="play-tiny-btn">▶</button>
+          <span class="anime-title">{{ anime.title }}</span>
+        </div>
+      </div>
+      <div class="card-status">
+        <span class="new-episode">New Catch Up</span>
+        <button class="watch-more-btn">Watch Now</button>
+      </div>
+    </div>
+  </div>
+</div>

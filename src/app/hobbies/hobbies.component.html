@@ -1,0 +1,53 @@
+<div class="hobbies-page">
+  <div class="back-btn-container">
+    <button class="back-btn" (click)="goBack()">
+      <span class="icon">❌</span> Back to Home
+    </button>
+  </div>
+
+  <section class="media-section">
+    <div class="media-header">
+      <div class="media-brand">
+        <span class="brand-n">N</span>
+        <span class="brand-series">SERIES</span>
+      </div>
+      <div class="media-hero-content">
+        <h1 class="media-title">Bon Appétit,<br>Your Majesty</h1>
+        <div class="media-rank">
+          <span class="rank-badge">TOP 10</span>
+          <span class="rank-text">#2 in TV Shows Today</span>
+        </div>
+        <p class="media-description">
+          A modern-day chef travels back in time and meets a tyrant king.
+          Can her cooking win his heart? This hit drama reached the Top 10 in over 90 countries.
+        </p>
+        <div class="media-actions">
+          <button class="play-btn">
+            <span class="icon">▶</span> Play
+          </button>
+          <button class="info-btn">
+            <span class="icon">ⓘ</span> More Info
+          </button>
+          <div class="media-toggle-container">
+            <button (click)="showMovies()" [class.active]="isMovies">Movies</button>
+            <button (click)="showAnime()" [class.active]="!isMovies">Anime</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-list-section">
+      <h3 class="list-title">{{ isMovies ? 'Movie Picks' : 'Anime Picks' }}</h3>
+      <div *ngIf="isMovies">
+        <app-movies></app-movies>
+      </div>
+      <div *ngIf="!isMovies">
+        <app-anime></app-anime>
+      </div>
+    </div>
+  </section>
+
+  <footer class="hobbies-footer">
+    <p>© 2025 Created by Dibyajeet Das. All Rights Are Reserved.</p>
+  </footer>
+</div>

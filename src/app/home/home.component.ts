@@ -9,12 +9,12 @@ import { LoadingService } from '../loading/loading.service';
 @Component({
   selector: 'app-home',
   standalone: true,
-//   imports: [CommonModule, TechStackComponent, AudioControlComponent],
   imports: [CommonModule, TechStackComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit, AfterViewInit {
+  isMovies = true;
 
   displayText = '';
   fullText = 'Software Engineer | Creative Developer';
@@ -61,5 +61,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.loadingService.hide();
       this.router.navigate(['/projects']);
     }, 800);
+  }
+
+  goToHobbies(): void {
+    this.loadingService.show();
+
+    setTimeout(() => {
+      this.loadingService.hide();
+      this.router.navigate(['/hobbies']);
+    }, 800);
+  }
+
+  scrollToHobbies(): void {
+    const element = document.getElementById('hobbies-section');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  showMovies() {
+    this.isMovies = true;
+  }
+
+  showAnime() {
+    this.isMovies = false;
   }
 }
